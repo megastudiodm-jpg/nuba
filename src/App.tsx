@@ -4,6 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import { NubianHeader, ActiveTab } from './components/NubianHeader';
 import { DictionaryView } from './components/DictionaryView';
 import { ProverbsView } from './components/ProverbsView';
@@ -76,14 +77,16 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#F5FBFB] text-slate-800 font-['Cairo',sans-serif] relative selection:bg-cyan-200 selection:text-cyan-950">
-      {/* Top Heritage Header */}
-      <NubianHeader
-        activeTab={activeTab}
-        onSelectTab={setActiveTab}
-        savedWordsCount={savedWordIds.length}
-        onOpenKeyboard={() => setIsKeyboardOpen(true)}
-      />
+    <>
+      <Analytics />
+      <div className="min-h-screen flex flex-col bg-[#F5FBFB] text-slate-800 font-['Cairo',sans-serif] relative selection:bg-cyan-200 selection:text-cyan-950">
+        {/* Top Heritage Header */}
+        <NubianHeader
+          activeTab={activeTab}
+          onSelectTab={setActiveTab}
+          savedWordsCount={savedWordIds.length}
+          onOpenKeyboard={() => setIsKeyboardOpen(true)}
+        />
 
       {/* Main App Canvas with Sunlit Whitewashed Plaster Texture */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 py-6 sm:py-8">
@@ -181,5 +184,6 @@ export default function App() {
         </div>
       </footer>
     </div>
+    </>
   );
 }
