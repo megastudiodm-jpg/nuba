@@ -1,0 +1,6 @@
+{
+  "name": "قاموس النوبة المصري",
+  "description": "قاموس ومترجم ومعلم تفاعلي للغة النوبية المصرية بلهجتيها (الفاديجا والكنزي) مع النطق الصوتي والأمثال الشعبية - تطوير عمر ماجد",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
